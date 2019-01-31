@@ -1,0 +1,19 @@
+= TypeArg class not found reproducer
+
+== Description
+
+With Vert.x 3.6.2.
+
+See https://github.com/vert-x3/issues/issues/445
+
+== Prerequisites
+
+* Apache Maven 3.5.3+
+* Java 8
+
+== Build
+
+[source]
+----
+mvn clean install
+----
