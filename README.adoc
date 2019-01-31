@@ -6,6 +6,26 @@ With Vert.x 3.6.2.
 
 See https://github.com/vert-x3/issues/issues/445
 
+== Error Return
+
+----
+io.vertx.serviceproxy.ServiceException: No enum constant ruget.reproducer.vertx.enumgen.Exemple.my pretty print for enum name var1
+  at ruget.reproducer.vertx.enumgen.service.DumpServiceVertxProxyHandler.handle(DumpServiceVertxProxyHandler.java:132)
+  at ruget.reproducer.vertx.enumgen.service.DumpServiceVertxProxyHandler.handle(DumpServiceVertxProxyHandler.java:54)
+  at io.vertx.core.eventbus.impl.HandlerRegistration.deliver(HandlerRegistration.java:261)
+  at io.vertx.core.eventbus.impl.HandlerRegistration.handle(HandlerRegistration.java:239)
+  at io.vertx.core.eventbus.impl.EventBusImpl$InboundDeliveryContext.next(EventBusImpl.java:565)
+  at io.vertx.core.eventbus.impl.EventBusImpl.lambda$deliverToHandler$5(EventBusImpl.java:524)
+  at io.vertx.core.impl.ContextImpl.executeTask(ContextImpl.java:320)
+  at io.vertx.core.impl.EventLoopContext.lambda$executeAsync$0(EventLoopContext.java:38)
+  at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+  at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+  at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+  at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+  at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+  at java.lang.Thread.run(Thread.java:748)
+----
+
 == Prerequisites
 
 * Apache Maven 3.5.3+
