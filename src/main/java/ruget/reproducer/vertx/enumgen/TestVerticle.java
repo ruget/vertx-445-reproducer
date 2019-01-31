@@ -16,10 +16,10 @@ public class TestVerticle extends AbstractVerticle {
 
     vertx.eventBus().<String>consumer("test.verticle", h -> {
       service.test(Exemple.valueOf(h.body()), r -> {
-        LOG.info("Service return {}", r.succeeded());
         if (r.succeeded()) {
           h.reply(r.result().name());
         } else {
+          LOG.error("Service return with error", r.cause());
           h.fail(0, r.cause().getLocalizedMessage());
         }
       });
@@ -27,10 +27,10 @@ public class TestVerticle extends AbstractVerticle {
 
     vertx.eventBus().<String>consumer("test.verticle.ok", h -> {
       service.testOk(ExempleOk.valueOf(h.body()), r -> {
-        LOG.info("Service return {}", r.succeeded());
         if (r.succeeded()) {
           h.reply(r.result().name());
         } else {
+          LOG.error("Service return with error", r.cause());
           h.fail(0, r.cause().getLocalizedMessage());
         }
       });
